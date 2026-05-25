@@ -343,7 +343,7 @@ with tab4:
 
     st.markdown(f"**Forecast SKU — {next_month_label}**")
     st.dataframe(
-        sku_fc_df.style.applymap(color_trend, subset=['MoM %', 'Trend 4M %'])
+        sku_fc_df.style.map(color_trend, subset=['MoM %', 'Trend 4M %'])
                         .format({'Forecast': '{:,.0f}', 'MoM %': '{:+.1f}%', 'Trend 4M %': '{:+.1f}%'}),
         use_container_width=True, height=320
     )
@@ -363,7 +363,7 @@ with tab4:
     col1, col2 = st.columns([1, 1])
     with col1:
         st.dataframe(
-            bp_fc_df.style.applymap(color_trend, subset=['MoM %'])
+            bp_fc_df.style.map(color_trend, subset=['MoM %'])
                            .format({'Forecast': '{:,.0f}', 'MoM %': '{:+.1f}%'}),
             use_container_width=True, height=430
         )
